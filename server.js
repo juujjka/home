@@ -4,7 +4,6 @@ const app = express();
 const bodyHome = require('body-parser');
 app.use(bodyHome.json())
 
-
   const users = {
 				user1: {
 					firstname: "Justyna",
@@ -36,16 +35,13 @@ app.use(bodyHome.json())
 		res.end("Update Successfully! \n");
 };
 
-
 	deleteUser = function(req, res) {
     console.log("--->After deletion, user list:\n" + JSON.stringify(users, null, 4) );
     res.end( "Deleted user: \n" + JSON.stringify(users, null, 4));
 };
 
-
 	// Retrieve all Users
   app.get('/api/users', findAll);
-
 
 	// Create a new User
     app.post('/api/users', create);
@@ -56,13 +52,10 @@ app.use(bodyHome.json())
     // Delete a User with Id
     app.delete('/api/users', deleteUser);
 	
-
   // Create a Server
   const server = app.listen(8081, function () {
-
   const host = server.address().address
   const port = server.address().port
-
 })
 
 
