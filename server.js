@@ -67,3 +67,4 @@ app.use(bodyHome.json())
 })
 
 
+  console.log("App listening at http://%s:%s", host, port)
